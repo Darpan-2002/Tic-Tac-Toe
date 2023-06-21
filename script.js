@@ -25,7 +25,7 @@ const checkWin = ()=>{
     ]
     wins.forEach(e =>{
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") ){
-            document.querySelector('.info1').innerText = boxtext[e[0]].innerText + " Won"
+            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
             isgameover = true
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "300px";
             document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
@@ -46,7 +46,7 @@ Array.from(boxes).forEach(element =>{
             audioTurn.play();
             checkWin();
             if (!isgameover){
-                document.getElementsByClassName("info1")[0].innerText  = "Turn for " + turn;
+                document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
             } 
         }
     })
@@ -61,7 +61,7 @@ reset.addEventListener('click', ()=>{
     turn = "X"; 
     isgameover = false
     document.querySelector(".line").style.width = "0vw";
-    document.getElementsByClassName("info1")[0].innerText  = "Turn for " + turn;
+    document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
 })
 
