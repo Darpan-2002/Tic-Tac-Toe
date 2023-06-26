@@ -25,7 +25,7 @@ const checkWin = ()=>{
     ]
     wins.forEach(e =>{
         if((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "") ){
-            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
+            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won," + " Click on reset button to play again"
             isgameover = true
             document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "300px";
             document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`
@@ -65,4 +65,9 @@ reset.addEventListener('click', ()=>{
     document.getElementsByClassName("info")[0].innerText  = "Turn for " + turn;
     document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
 })
+
+var typed = new Typed('#element', {
+    strings: ['Welcome to My TicTacToe'],
+    typeSpeed: 40,
+  });
 
